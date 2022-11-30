@@ -1,24 +1,6 @@
 import React, { useState, useEffect , Component} from 'react';
 import { dbRefMinMax, dbRefHist} from "./firebase";
 import { Line } from 'react-chartjs-3';
-// import React, {Component} from "react";
-
-
-// const st = {
-//     labels: ['January', 'February', 'March',
-//              'April', 'May'],
-//     datasets: [
-//       {
-//         label: 'Rainfall',
-//         fill: false,
-//         lineTension: 0.5,
-//         backgroundColor: 'rgba(75,192,192,1)',
-//         borderColor: 'rgba(0,0,0,1)',
-//         borderWidth: 2,
-//         data: [65, 59, 80, 81, 56]
-//       }
-//     ]
-//   }
 
 class History extends Component {
     constructor(props) {
@@ -74,18 +56,13 @@ class History extends Component {
         // Changing state
         
         // window.location.reload();
-
-        
             this.setState({
                 Click : 'Temperature'
             });
-            Line.update
       }
 
       handleClick2(){
-   
-        // Changing state
-        
+
         //  window.location.reload();
         this.setState({Click : 'Pressure'})
       }
