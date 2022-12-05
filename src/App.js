@@ -10,7 +10,7 @@ import Kato from "./images/Kato.jpg";
  import {WiDayCloudy} from 'react-icons/wi';
  import { Pie, Line } from 'react-chartjs-3';
  import History from './history';
-import {Teststate} from './test'
+import {Teststate5} from './test5'
 // import * as Icons from 'react-icons/bs';
 import { useState } from "react";
 //import { Doughnut } from 'react-chartjs-2';
@@ -26,11 +26,24 @@ class App extends Component {
         temp: null,
         clouds:null,
         pressure: null,
-        icon:null
+        icon:null,
+        isToggleOn: true
+        
 
       };
   }
+   handleClick(){
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }))
+   
+  }
 
+ handleClick2(){
+  this.setState(prevState => ({
+    isToggleOn: !prevState.isToggleOn
+  }))
+  }
 
   componentDidMount=()=> {
     
@@ -123,8 +136,8 @@ render() {
         <div className="container">
           {/* <Doughnut/> */}
           <div className="charts">
-          <History/>
-          <Teststate/>
+          {/* <History/> */}
+          <Teststate5/>
           {/* <Pie data={{
       labels: ["Red", "Green", "Yellow"],
       datasets: [
@@ -141,9 +154,13 @@ render() {
       }
     }}></Pie> */}
           </div>
+          <div>
+      <button type="button" className="button" onClick={this.handleClick}>Temperatura</button>
+      <button className="button" type="button" onClick={this.handleClick2}><span className="text">Ciśnienie</span></button>
+    </div>
         </div>
       </div>
-
+{/* {this.state.isToggleOn} */}
       
       
       
@@ -155,6 +172,7 @@ render() {
               <p>{this.state.hum}</p>
             </div> */}
     </div>
+    
   )
 }
 }

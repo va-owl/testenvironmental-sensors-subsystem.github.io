@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { dbRefMinMax, dbRefHist} from "./firebase";
 import { Line } from 'react-chartjs-3';
 
-function Teststate () {
+function Teststate2 () {
     const[state, setState] = useState ({
         // d1: null,
         // Max1:null,
@@ -58,7 +58,9 @@ function Teststate () {
                 ...s,
                 d6:day6,
                 Min6:tempMin6,
-                Max6:tempMax6
+                Max6:tempMax6,
+                labelMin:"Temperatura minimalna",
+                labelMax:"Temperatura maksymalna"
 
             }))
             console.log(state.d6)
@@ -140,51 +142,6 @@ function Teststate () {
                 Min1:tempMin1,
                 Max1:tempMax1
             }))
-
-            if (state.Click==='Pressure' || state.Click===null){
-                setState(s => ({
-                    ...s,
-                    Max1:pressMax1,
-                    Min1:pressMin1,
-                    Max2:pressMax2,
-                    Min2:pressMin2,
-                    Max3:pressMax3,
-                    Min3:pressMin3,
-                    Max4:pressMax4,
-                    Min4:pressMin4,
-                    Max5:pressMax5,
-                    Min5:pressMin5,
-                    Max6:pressMax6,
-                    Min6:pressMin6,
-                    labelMin:"Ciśnienie minimalne",
-                    labelMax:"Ciśnienie maksymalne"
-            }))
-   
-            }else if (state.Click==='Temperature'){
-                setState(s => ({
-                    ...s,
-                    Max1:tempMax1,
-                    Min1:tempMin1,
-                    Max2:tempMax2,
-                    Min2:tempMin2,
-                    Max3:tempMax3,
-                    Min3:tempMin3,
-                    Max4:tempMax4,
-                    Min4:tempMin4,
-                    Max5:tempMax5,
-                    Min5:tempMin5,
-                    Max6:tempMax6,
-                    Min6:tempMin6,
-                    labelMin:"Temperatura minimalna",
-                    labelMax:"Temperatura maksymalna"
-            }))
-            setState(s => ({
-                ...s,
-                labelMin:"Temperatura minimalna",
-                labelMax:"Temperatura maksymalna"
-            }))
-            }
-            console.log(state.labelMax)
         })
 
             dbRefMinMax.on("value", snapshot => {
@@ -205,23 +162,9 @@ function Teststate () {
                    Max7:tempMax7
                }))
                
-
-            if (state.Click==='Pressure' ||state.Click===null){
-                setState({
-                    Max7:pressMax7,
-                    Min7:pressMin7,
-            })
-   
-            }else if (state.Click==='Temperature'){
-                setState({
-                    Max7:tempMax7,
-                    Min7:tempMin7,
-            })
-            }
         })
         
 },[]);
-
 return (
       <div>
         <Line redraw={true}
@@ -266,4 +209,4 @@ return (
 //     </div>
 //   );
 
-export {Teststate}
+export {Teststate2}
