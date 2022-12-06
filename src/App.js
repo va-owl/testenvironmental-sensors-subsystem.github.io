@@ -10,7 +10,7 @@ import Kato from "./images/Kato.jpg";
  import {WiDayCloudy} from 'react-icons/wi';
  import { Pie, Line } from 'react-chartjs-3';
  import History from './history';
-import {Charts} from './Charts'
+import {Charts} from './components/Charts'
 // import * as Icons from 'react-icons/bs';
 import { useState } from "react";
 //import { Doughnut } from 'react-chartjs-2';

@@ -48,8 +48,8 @@ function Charts () {
 
 
 return (
-    <div>
-      <button type="button" className="button" onClick={usePriest}>Temperatura</button>
+    <div className="item">
+      <button type="button" className="button" onClick={usePriest}><span className="text">Temperatura</span></button>
       <button className="button" type="button" onClick={usePriest2}><span className="text">Ciśnienie</span></button>
     
     {showButton && (
