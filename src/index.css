@@ -68,9 +68,14 @@
     font-size: 50px;
     margin-left: 5%;
 }
+.section_data {
+    display: -webkit-box;
+    /* grid-auto-rows: unset; */
+    /* gap: 17px; */
+}
 .icon {
-    margin-top: -4%;
-    margin-left: 23%;
+    margin-top: -15%;
+    margin-left: 12%;
 }
 .weatherData {
     color: white;
@@ -115,6 +120,7 @@
     display: inline-block;
     color: white;
     font-family:monospace ;
+    top: 4%;
     /* font-family: Clarkson,Helvetica,sans-serif; */
     font-size: 14px;
     font-weight: 500;

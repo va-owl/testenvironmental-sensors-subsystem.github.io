@@ -11,9 +11,9 @@ import Kato from "./images/Kato.jpg";
  import { Pie, Line } from 'react-chartjs-3';
  import History from './history';
 import {Charts} from './components/Charts'
-// import * as Icons from 'react-icons/bs';
 import { useState } from "react";
-//import { Doughnut } from 'react-chartjs-2';
+import ClearDay from './components/icons/clear_day';
+import CoudyDay from './components/icons/CoudyDay';
 
 
 
@@ -27,23 +27,24 @@ class App extends Component {
         clouds:null,
         pressure: null,
         icon:null,
-        isToggleOn: true
+        // isToggleOn: true
+        tempRound:null
         
 
       };
   }
-   handleClick(){
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
-    }))
+//    handleClick(){
+//     this.setState(prevState => ({
+//       isToggleOn: !prevState.isToggleOn
+//     }))
    
-  }
+//   }
 
- handleClick2(){
-  this.setState(prevState => ({
-    isToggleOn: !prevState.isToggleOn
-  }))
-  }
+//  handleClick2(){
+//   this.setState(prevState => ({
+//     isToggleOn: !prevState.isToggleOn
+//   }))
+//   }
 
   componentDidMount=()=> {
     
@@ -54,15 +55,16 @@ class App extends Component {
       var clouds=100-weather.lux;
       var weathericon
       if (weather.temp>25 && clouds >70 ) {
-        weathericon=<WiDayCloudy size="6em" color="yellow"/>
+        weathericon=<CoudyDay/>
       } else if(weather.temp>25 && clouds <70) {
-        weathericon=<FaSun size="6em" color="yellow"/>
+        weathericon=<ClearDay/>
       }
       this.setState({hum:weather.hum, //wilgotnosc
                     temp: weather.temp, //temperatura
                     pressure: weather.pressure, //cisnienie
                     clouds:clouds, //swiatlo
-                    icon:weathericon
+                    icon:weathericon,
+                    tempRound:Math.round(weather.temp)
       })
      console.log(weather);
    });
@@ -108,7 +110,7 @@ render() {
           <div className="section">
             <div className= "section__temperature">
               <div className="temperature">
-                <h1>{this.state.temp}°C</h1>
+                <h1>{this.state.tempRound}°C</h1>
               </div>
               <div className="section__city App-header">
                 <h1>Katowice</h1>
@@ -116,21 +118,26 @@ render() {
             </div>
           </div>
           <div className="section">
+            <div className='section_data'>
             <div className="weatherData">
-                <p>Zachmurzenia {this.state.clouds}%</p>
-                <p>Ciśnienie {this.state.pressure} hPa</p>
-                <p>Wilgotność {this.state.hum}%</p>
-                
-            </div>
-            <div className="icon">
-                {/* {this.state.temp>30 ? (<FaSun size="6em" color="yellow"/>) :(<WiDayCloudy/>)} */}
-              {/* {this.state.temp>30 ? (
-                {this.state.clouds>70 ? (<WiDayCloudy/>):(<FaSun size="6em" color="yellow"/>) 
-                }}: ()} */}
-                
-                {/* {this.state.clouds>70 ? (<WiDayCloudy size="6em" color="yellow"/>):(<FaSun size="6em" color="yellow"/>) } */}
-                {/* {this.state.icon} */}
+                  <p>Zachmurzenia {this.state.clouds}%</p>
+                  <p>Ciśnienie {this.state.pressure} hPa</p>
+                  <p>Wilgotność {this.state.hum}%</p>
+                  <p>Temperatura {this.state.temp}°C</p>
+                  
               </div>
+              <div className="icon">
+                {/* <ClearDay/> */}
+                  {/* {this.state.temp>30 ? (<FaSun size="6em" color="yellow"/>) :(<WiDayCloudy/>)} */}
+                {/* {this.state.temp>30 ? (
+                  {this.state.clouds>70 ? (<WiDayCloudy/>):(<FaSun size="6em" color="yellow"/>) 
+                  }}: ()} */}
+                  
+                  {/* {this.state.clouds>70 ? (<WiDayCloudy size="6em" color="yellow"/>):(<FaSun size="6em" color="yellow"/>) } */}
+                  {this.state.icon}
+              </div>
+              
+            </div>
           </div>
         </div>
         <div className="container">

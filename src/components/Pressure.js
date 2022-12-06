@@ -135,7 +135,8 @@ return (
                 position: "bottom",
                 labels: {
                   fontColor: "#fffbeb5e",
-                  fontSize: 9
+                  fontSize: 9,
+                  fontFamily:"monospace"
                 }
               }}
               options = {{
