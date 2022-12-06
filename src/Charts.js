@@ -1,10 +1,10 @@
-import { Teststate4  } from "./test4"
-import { Teststate3 } from "./test3"
+import { TempChart  } from "./Temperature"
+import { PressChart } from "./Pressure"
 import {useState} from 'react';
 
 
 
-function Teststate5 () {
+function Charts () {
 
     const [showButton, setShowButton] = useState(false);
 
@@ -54,12 +54,12 @@ return (
     
     {showButton && (
         <div>
-          <Teststate4/>
+          <TempChart/>
         </div>
     )}
     {showButton===false && (
         <div>
-          <Teststate3/>
+          <PressChart/>
         </div>
     )}
     </div>
@@ -67,4 +67,4 @@ return (
 
   );
         }
-        export {Teststate5}
+        export {Charts}

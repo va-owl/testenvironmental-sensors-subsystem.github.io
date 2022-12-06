@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { dbRefMinMax, dbRefHist} from "./firebase";
 import { Line } from 'react-chartjs-3';
 
-function Teststate3 () {
+function PressChart () {
     const[state, setState] = useState ({
 
     })
@@ -245,4 +245,4 @@ return (
 //     </div>
 //   );
 
-export {Teststate3}
+export {PressChart}

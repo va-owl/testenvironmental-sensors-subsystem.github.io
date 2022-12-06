@@ -10,7 +10,7 @@ import Kato from "./images/Kato.jpg";
  import {WiDayCloudy} from 'react-icons/wi';
  import { Pie, Line } from 'react-chartjs-3';
  import History from './history';
-import {Teststate5} from './test5'
+import {Charts} from './Charts'
 // import * as Icons from 'react-icons/bs';
 import { useState } from "react";
 //import { Doughnut } from 'react-chartjs-2';
@@ -137,7 +137,7 @@ render() {
           {/* <Doughnut/> */}
           <div className="charts">
           {/* <History/> */}
-          <Teststate5/>
+          <Charts/>
           {/* <Pie data={{
       labels: ["Red", "Green", "Yellow"],
       datasets: [
@@ -154,10 +154,10 @@ render() {
       }
     }}></Pie> */}
           </div>
-          <div>
+          {/* <div>
       <button type="button" className="button" onClick={this.handleClick}>Temperatura</button>
       <button className="button" type="button" onClick={this.handleClick2}><span className="text">Ciśnienie</span></button>
-    </div>
+    </div> */}
         </div>
       </div>
 {/* {this.state.isToggleOn} */}
