@@ -31,8 +31,8 @@ function TempChart () {
                 d6:day6,
                 Min6:tempMin6,
                 Max6:tempMax6,
-                labelMin:"Temp minimalna [℃]",
-                labelMax:"Temp maksymalna [℃]"
+                labelMin:"Temperatura minimalna [℃]",
+                labelMax:"Temperatura maksymalna [℃]"
 
             }))
             console.log(state.d6)

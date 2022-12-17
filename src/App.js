@@ -28,7 +28,8 @@ class App extends Component {
         pressure: null,
         icon:null,
         // isToggleOn: true
-        tempRound:null
+        tempRound:null,
+        today:null
         
 
       };
@@ -64,9 +65,10 @@ class App extends Component {
                     pressure: weather.pressure, //cisnienie
                     clouds:clouds, //swiatlo
                     icon:weathericon,
-                    tempRound:Math.round(weather.temp)
+                    tempRound:Math.round(weather.temp),
+                    today:new Date().toLocaleDateString()
       })
-     console.log(weather);
+     console.log(new Date().toLocaleDateString());
    });
 ///history
 dbRefHist.limitToLast(5).on("value", snapshot => {
@@ -107,36 +109,41 @@ render() {
     <div className="App" style={{backgroundImage: `url(${Kato})`}}>
       <div className="overlay">
         <div className="container">
-          <div className="section">
-            <div className= "section__temperature">
-              <div className="temperature">
-                <h1>{this.state.tempRound}°C</h1>
-              </div>
-              <div className="section__city App-header">
-                <h1>Katowice</h1>
+          {/* <div className='section_date'>
+            {this.state.today}
+           </div> */}
+          <div className='weather'>
+            <div className="section">
+              <div className= "section__temperature">
+                <div className="temperature">
+                  <h1>{this.state.tempRound}°C</h1>
+                </div>
+                <div className="section__city App-header">
+                  <h1>Katowice</h1>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="section">
-            <div className='section_data'>
-            <div className="weatherData">
-                  <p>Zachmurzenia {this.state.clouds}%</p>
-                  <p>Ciśnienie {this.state.pressure} hPa</p>
-                  <p>Wilgotność {this.state.hum}%</p>
-                  <p>Temperatura {this.state.temp}°C</p>
-                  
+            <div className="section">
+              <div className='section_data'>
+              <div className="weatherData">
+                    <p>Zachmurzenia {this.state.clouds}%</p>
+                    <p>Ciśnienie {this.state.pressure} hPa</p>
+                    <p>Wilgotność {this.state.hum}%</p>
+                    <p>Temperatura {this.state.temp}°C</p>
+                    
+                </div>
+                <div className="icon">
+                  {/* <ClearDay/> */}
+                    {/* {this.state.temp>30 ? (<FaSun size="6em" color="yellow"/>) :(<WiDayCloudy/>)} */}
+                  {/* {this.state.temp>30 ? (
+                    {this.state.clouds>70 ? (<WiDayCloudy/>):(<FaSun size="6em" color="yellow"/>) 
+                    }}: ()} */}
+                    
+                    {/* {this.state.clouds>70 ? (<WiDayCloudy size="6em" color="yellow"/>):(<FaSun size="6em" color="yellow"/>) } */}
+                    {this.state.icon}
+                </div>
+                
               </div>
-              <div className="icon">
-                {/* <ClearDay/> */}
-                  {/* {this.state.temp>30 ? (<FaSun size="6em" color="yellow"/>) :(<WiDayCloudy/>)} */}
-                {/* {this.state.temp>30 ? (
-                  {this.state.clouds>70 ? (<WiDayCloudy/>):(<FaSun size="6em" color="yellow"/>) 
-                  }}: ()} */}
-                  
-                  {/* {this.state.clouds>70 ? (<WiDayCloudy size="6em" color="yellow"/>):(<FaSun size="6em" color="yellow"/>) } */}
-                  {this.state.icon}
-              </div>
-              
             </div>
           </div>
         </div>

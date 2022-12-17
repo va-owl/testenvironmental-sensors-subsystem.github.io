@@ -45,12 +45,23 @@
     margin: auto;
     width: 95% !important;
 }
-
+.weather {
+    position: absolute;
+    top: 10%;
+}
 .section {
     width:100%;
     padding:1rem;
     border-radius:0.4rem;
     display: flex;
+}
+.section_date {
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+    position: absolute;
+    left: 68%;
+    top: 6%;
 }
 
 .section__city {
