@@ -67,7 +67,7 @@ class History extends Component {
         this.setState({Click : 'Pressure'})
       }
     // const [history, Sethistory] = useState({day1:null, day2:'test'});
-  
+
     // Similar to componentDidMount and componentDidUpdate:
     componentDidMount=() => {
 
@@ -85,7 +85,7 @@ class History extends Component {
         var [year,month, day,] = date6.split('-');
         var dd = date6.split("-")[2].split(" ")[0];
         var mm = date6.split("-")[1].padStart(2, "0");
-        var lastday=dd+'.'+mm
+        var day6=dd+'.'+mm
         console.log(tempMax6)
         
 
@@ -140,7 +140,7 @@ class History extends Component {
         var date1=dd+'.'+mm
 
         this.setState({
-            d6:lastday, 
+            d6:day6, 
             d5:day5, 
             d4:date4, 
             d3:date3, 

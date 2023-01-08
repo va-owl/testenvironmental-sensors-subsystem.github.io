@@ -4,6 +4,7 @@ import { Line } from 'react-chartjs-3';
 
 function PressChart () {
     const[state, setState] = useState ({
+      
 
     })
     useEffect(()=>{

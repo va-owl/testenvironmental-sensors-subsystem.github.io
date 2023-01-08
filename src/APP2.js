@@ -14,7 +14,6 @@ import {Charts} from './components/Charts'
 import { useState } from "react";
 import ClearDay from './components/icons/clear_day';
 import CoudyDay from './components/icons/CoudyDay';
-import { RealtimeData } from './components/DataRealtime';
 
 
 
@@ -47,33 +46,30 @@ class App extends Component {
 //     isToggleOn: !prevState.isToggleOn
 //   }))
 //   }
-//coment
-  // componentDidMount=()=> {
+
+  componentDidMount=()=> {
     
   
     
-  //   dbRef.on("value", snapshot => {
-  //     var weather = snapshot.val(); //wartosci z updated
-  //     var clouds=100-weather.lux;
-  //     var weathericon
-  //     if (weather.temp>25 && clouds >70 ) {
-  //       weathericon=<CoudyDay/>
-  //     } else if(weather.temp>25 && clouds <70) {
-  //       weathericon=<ClearDay/>
-  //     }
-  //     this.setState({hum:weather.hum, //wilgotnosc
-  //                   temp: weather.temp, //temperatura
-  //                   pressure: weather.pressure, //cisnienie
-  //                   clouds:clouds, //swiatlo
-  //                   icon:weathericon,
-  //                   tempRound:Math.round(weather.temp),
-  //                   today:new Date().toLocaleDateString()
-  //     })
-  //   // console.log(new Date().toLocaleDateString());
-  //  });
-//end coment
-
-
+    dbRef.on("value", snapshot => {
+      var weather = snapshot.val(); //wartosci z updated
+      var clouds=100-weather.lux;
+      var weathericon
+      if (weather.temp>25 && clouds >70 ) {
+        weathericon=<CoudyDay/>
+      } else if(weather.temp>25 && clouds <70) {
+        weathericon=<ClearDay/>
+      }
+      this.setState({hum:weather.hum, //wilgotnosc
+                    temp: weather.temp, //temperatura
+                    pressure: weather.pressure, //cisnienie
+                    clouds:clouds, //swiatlo
+                    icon:weathericon,
+                    tempRound:Math.round(weather.temp),
+                    today:new Date().toLocaleDateString()
+      })
+    // console.log(new Date().toLocaleDateString());
+   });
 ///history
 // dbRefHist.limitToLast(5).on("value", snapshot => {
 //   var i=0
@@ -104,9 +100,7 @@ class App extends Component {
 //   });
    
 //  });
-
-//remember uncoment
- // }
+  }
 
   
 
@@ -114,7 +108,45 @@ render() {
   return (
     <div className="App" style={{backgroundImage: `url(${Kato})`}}>
       <div className="overlay">
-        <RealtimeData/>
+        <div className="container">
+          {/* <div className='section_date'>
+            {this.state.today}
+           </div> */}
+          <div className='weather'>
+            <div className="section">
+              <div className= "section__temperature">
+                <div className="temperature">
+                  <h1>{this.state.tempRound}°C</h1>
+                </div>
+                <div className="section__city App-header">
+                  <h1>Katowice</h1>
+                </div>
+              </div>
+            </div>
+            <div className="section">
+              <div className='section_data'>
+              <div className="weatherData">
+                    <p>Zachmurzenia {this.state.clouds}%</p>
+                    <p>Ciśnienie {this.state.pressure} hPa</p>
+                    <p>Wilgotność {this.state.hum}%</p>
+                    <p>Temperatura {this.state.temp}°C</p>
+                    
+                </div>
+                <div className="icon">
+                  {/* <ClearDay/> */}
+                    {/* {this.state.temp>30 ? (<FaSun size="6em" color="yellow"/>) :(<WiDayCloudy/>)} */}
+                  {/* {this.state.temp>30 ? (
+                    {this.state.clouds>70 ? (<WiDayCloudy/>):(<FaSun size="6em" color="yellow"/>) 
+                    }}: ()} */}
+                    
+                    {/* {this.state.clouds>70 ? (<WiDayCloudy size="6em" color="yellow"/>):(<FaSun size="6em" color="yellow"/>) } */}
+                    {this.state.icon}
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="container">
           {/* <Doughnut/> */}
           <div className="charts">
