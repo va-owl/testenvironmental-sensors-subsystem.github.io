@@ -14,9 +14,9 @@ function PressChart () {
             var date6=Object.values(history)[5].date
             var pressMax6=Object.values(history)[5].pressuremax
             var pressMin6=Object.values(history)[5].pressuremin
-            var dd = date6.split("-")[2].split(" ")[0];
-            var mm = date6.split("-")[1].padStart(2, "0");
-            var day6=dd+'.'+mm
+            var dd6 = date6.split("-")[2].split(" ")[0];
+            var mm6 = date6.split("-")[1].padStart(2, "0");
+            var day6=dd6+'.'+mm6
             setState(s => ({
                 ...s,
                 d6:day6,
@@ -24,15 +24,13 @@ function PressChart () {
                 Max6:pressMax6,
                 labelMin:"Ciśnienie minimalne [hPa]",
                 labelMax:"Ciśnienie maksymalne [hPa]"
-
             })) 
             var date5=Object.values(history)[4].date
             var pressMax5=Object.values(history)[4].pressuremax
             var pressMin5=Object.values(history)[4].pressuremin
-            //var [year,month, day,] = date5.split('-');
-            var dd = date5.split("-")[2].split(" ")[0];
-            var mm = date5.split("-")[1].padStart(2, "0");
-            var day5=dd+'.'+mm
+            var dd5 = date5.split("-")[2].split(" ")[0];
+            var mm5 = date5.split("-")[1].padStart(2, "0");
+            var day5=dd5+'.'+mm5
             setState(s => ({
                 ...s,
                 d5:day5,
@@ -43,10 +41,9 @@ function PressChart () {
             var date4=Object.values(history)[3].date
             var pressMax4=Object.values(history)[3].pressuremax
             var pressMin4=Object.values(history)[3].pressuremin
-           // var [year,month, day,] = date4.split('-');
-            var dd = date4.split("-")[2].split(" ")[0];
-            var mm = date4.split("-")[1].padStart(2, "0");
-            var day4=dd+'.'+mm
+            var dd4 = date4.split("-")[2].split(" ")[0];
+            var mm4 = date4.split("-")[1].padStart(2, "0");
+            var day4=dd4+'.'+mm4
             setState(s => ({
                 ...s,
                 d4:day4,
@@ -57,10 +54,9 @@ function PressChart () {
             var date3=Object.values(history)[2].date
             var pressMax3=Object.values(history)[2].pressuremax
             var pressMin3=Object.values(history)[2].pressuremin
-            //var [year,month, day,] = date3.split('-');
-            var dd = date3.split("-")[2].split(" ")[0];
-            var mm = date3.split("-")[1].padStart(2, "0");
-            var day3=dd+'.'+mm
+            var dd3 = date3.split("-")[2].split(" ")[0];
+            var mm3 = date3.split("-")[1].padStart(2, "0");
+            var day3=dd3+'.'+mm3
             setState(s => ({
                 ...s,
                 d3:day3,
@@ -70,10 +66,9 @@ function PressChart () {
             var date2=Object.values(history)[1].date
             var pressMax2=Object.values(history)[1].pressuremax
             var pressMin2=Object.values(history)[1].pressuremin
-            //var [year,month, day,] = date2.split('-');
-            var dd = date2.split("-")[2].split(" ")[0];
-            var mm = date2.split("-")[1].padStart(2, "0");
-            var day2=dd+'.'+mm
+            var dd2 = date2.split("-")[2].split(" ")[0];
+            var mm2 = date2.split("-")[1].padStart(2, "0");
+            var day2=dd2+'.'+mm2
             setState(s => ({
                 ...s,
                 d2:day2,
@@ -83,10 +78,9 @@ function PressChart () {
             var date1=Object.values(history)[0].date
             var pressMax1=Object.values(history)[0].pressuremax
             var pressMin1=Object.values(history)[0].pressuremin
-            //var [year,month, day,] = date1.split('-');
-            var dd = date1.split("-")[2].split(" ")[0];
-            var mm = date1.split("-")[1].padStart(2, "0");
-            var day1=dd+'.'+mm
+            var dd1 = date1.split("-")[2].split(" ")[0];
+            var mm1 = date1.split("-")[1].padStart(2, "0");
+            var day1=dd1+'.'+mm1
             setState(s => ({
                 ...s,
                 d1:day1,
@@ -100,10 +94,9 @@ function PressChart () {
                 var date7=minmax.date
                 var pressMax7=minmax.pressuremax
                 var pressMin7=minmax.pressuremin
-                // var [year,month, day,] = date7.split('-');
-                var dd = date7.split("-")[2].split(" ")[0];
-                var mm = date7.split("-")[1].padStart(2, "0");
-                date7=dd+'.'+mm
+                var dd7 = date7.split("-")[2].split(" ")[0];
+                var mm7 = date7.split("-")[1].padStart(2, "0");
+                date7=dd7+'.'+mm7
                 setState(s => ({
                     ...s,
                    d7:date7,
@@ -111,7 +104,6 @@ function PressChart () {
                    Max7:pressMax7
                }))
         })
-
         return () => {
           setState(s => ({
             ...s,
@@ -120,13 +112,6 @@ function PressChart () {
         }
         
 },[]);
-
-const myFunction = () => {
-  setState({
-      name: 'Jhon',
-      surname: 'Doe',
-  })
-}
 
 return (
       <div >
@@ -156,10 +141,6 @@ return (
                 }
               }}
               options = {{
-                // title: {
-                //   display: true,
-                //   text: "Chart Title"
-                // },
                 scales: {
                   yAxes: [
                     { gridLines: {
@@ -182,10 +163,7 @@ return (
               }}
         />
       </div>
-
     );
   }
-
-
 
 export {PressChart}

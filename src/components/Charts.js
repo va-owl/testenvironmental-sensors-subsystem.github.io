@@ -2,14 +2,11 @@ import { TempChart  } from "./Temperature"
 import { PressChart } from "./Pressure"
 import {useState} from 'react';
 
-
-
 function Charts () {
 
     const [showButton, setShowButton] = useState(false);
-    //const tt=document.getElementById('tempButton').classList.add("focus")
 
-    const usePriest = evt => {
+    const ShowTempChart = evt => {
         setShowButton(true);
         var tempbutton= document.getElementById('tempButton')
         tempbutton.classList.add('active')
@@ -18,7 +15,7 @@ function Charts () {
      
       };
 
-      const usePriest2 = evt => {
+      const ShowPressChart = evt => {
         setShowButton(false);
         var tempbutton= document.getElementById('tempButton')
         tempbutton.classList.remove('active')
@@ -26,42 +23,10 @@ function Charts () {
         pressbutton.classList.add('active')
       };
 
-
-
-
-    // function handleClick(){
-    //     setState(s => ({
-    //         ...s,
-    //         Click : 'Temperature'
-    //     }))
-    //   }
-
-    // function handleClick2(){
-    //     setState(s => ({
-    //         ...s,
-    //         Click : 'Pressure'
-    //     }))
-    //   }
-// if (state.Click==='Pressure' ||state.Click===null){
-//     setState({
-//         Max7:pressMax7,
-//         Min7:pressMin7,
-// })
-
-// }else if (state.Click==='Temperature'){
-//     setState({
-//         Max7:tempMax7,
-//         Min7:tempMin7,
-// })
-// }
-
-
-
-
 return (
     <div className="item">
-      <button className="button" id="tempButton"  onClick={usePriest}><span className="text">Temperatura</span></button>
-      <button className="button" id="pressButton" type="button" onClick={usePriest2}><span className="text">Ciśnienie</span></button>
+      <button className="button" id="tempButton"  onClick={ShowTempChart}><span className="text">Temperatura</span></button>
+      <button className="button" id="pressButton" type="button" onClick={ShowPressChart}><span className="text">Ciśnienie</span></button>
     
     {showButton && (
         <div>
@@ -74,8 +39,6 @@ return (
         </div>
     )}
     </div>
- 
-
   );
         }
         export {Charts}

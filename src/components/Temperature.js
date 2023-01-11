@@ -1,21 +1,10 @@
 import { useState, useEffect } from "react";
 import { dbRefMinMax, dbRefHist} from "../firebase";
 import { Line } from 'react-chartjs-3';
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-  } from 'chart.js';
 
 function TempChart () {
 
     const[state, setState] = useState ({
-
     })
     useEffect(()=>{
         dbRefHist.limitToLast(6).on("value", snapshot => {
@@ -35,15 +24,14 @@ function TempChart () {
                 labelMax:"Temperatura maksymalna [℃]"
 
             }))
-            console.log(state.d6)
+            //console.log(state.d6)
            
             var date5=Object.values(history)[4].date
             var tempMax5=Object.values(history)[4].tempmax
             var tempMin5=Object.values(history)[4].tempmin
-           // var [year,month, day,] = date5.split('-');
-            var dd = date5.split("-")[2].split(" ")[0];
-            var mm = date5.split("-")[1].padStart(2, "0");
-            var day5=dd+'.'+mm
+            var dd5 = date5.split("-")[2].split(" ")[0];
+            var mm5 = date5.split("-")[1].padStart(2, "0");
+            var day5=dd5+'.'+mm5
             setState(s => ({
                 ...s,
                 d5:day5,
@@ -54,10 +42,9 @@ function TempChart () {
             var date4=Object.values(history)[3].date
             var tempMax4=Object.values(history)[3].tempmax
             var tempMin4=Object.values(history)[3].tempmin
-           // var [year,month, day,] = date4.split('-');
-            var dd = date4.split("-")[2].split(" ")[0];
-            var mm = date4.split("-")[1].padStart(2, "0");
-            var day4=dd+'.'+mm
+            var dd4 = date4.split("-")[2].split(" ")[0];
+            var mm4 = date4.split("-")[1].padStart(2, "0");
+            var day4=dd4+'.'+mm4
             setState(s => ({
                 ...s,
                 d4:day4,
@@ -68,10 +55,9 @@ function TempChart () {
             var date3=Object.values(history)[2].date
             var tempMax3=Object.values(history)[2].tempmax
             var tempMin3=Object.values(history)[2].tempmin
-           // var [year,month, day,] = date3.split('-');
-            var dd = date3.split("-")[2].split(" ")[0];
-            var mm = date3.split("-")[1].padStart(2, "0");
-            var day3=dd+'.'+mm
+            var dd3 = date3.split("-")[2].split(" ")[0];
+            var mm3 = date3.split("-")[1].padStart(2, "0");
+            var day3=dd3+'.'+mm3
             setState(s => ({
                 ...s,
                 d3:day3,
@@ -81,10 +67,9 @@ function TempChart () {
             var date2=Object.values(history)[1].date
             var tempMax2=Object.values(history)[1].tempmax
             var tempMin2=Object.values(history)[1].tempmin
-           // var [year,month, day,] = date2.split('-');
-            var dd = date2.split("-")[2].split(" ")[0];
-            var mm = date2.split("-")[1].padStart(2, "0");
-            var day2=dd+'.'+mm
+            var dd2 = date2.split("-")[2].split(" ")[0];
+            var mm2 = date2.split("-")[1].padStart(2, "0");
+            var day2=dd2+'.'+mm2
             setState(s => ({
                 ...s,
                 d2:day2,
@@ -94,10 +79,9 @@ function TempChart () {
             var date1=Object.values(history)[0].date
             var tempMax1=Object.values(history)[0].tempmax
             var tempMin1=Object.values(history)[0].tempmin
-            //var [year,month, day,] = date1.split('-');
-            var dd = date1.split("-")[2].split(" ")[0];
-            var mm = date1.split("-")[1].padStart(2, "0");
-            var day1=dd+'.'+mm
+            var dd1 = date1.split("-")[2].split(" ")[0];
+            var mm1 = date1.split("-")[1].padStart(2, "0");
+            var day1=dd1+'.'+mm1
             setState(s => ({
                 ...s,
                 d1:day1,
@@ -111,10 +95,9 @@ function TempChart () {
                 var date7=minmax.date
                 var tempMax7=minmax.tempmax
                 var tempMin7=minmax.tempmin
-             //   var [year,month, day,] = date7.split('-');
-                var dd = date7.split("-")[2].split(" ")[0];
-                var mm = date7.split("-")[1].padStart(2, "0");
-                date7=dd+'.'+mm
+                var dd7 = date7.split("-")[2].split(" ")[0];
+                var mm7 = date7.split("-")[1].padStart(2, "0");
+                date7=dd7+'.'+mm7
                 setState(s => ({
                     ...s,
                    d7:date7,
@@ -124,8 +107,7 @@ function TempChart () {
         })
         return () => {
           setState(s => ({
-            ...s,
-           
+            ...s,    
        }))
         }
         
@@ -159,10 +141,6 @@ return (
                 }
               }}
               options = {{
-                // title: {
-                //   display: true,
-                //   text: "Chart Title"
-                // },
                 scales: {
                   yAxes: [
                     { gridLines: {
@@ -190,6 +168,5 @@ return (
 
     );
   }
-
 
 export {TempChart}
