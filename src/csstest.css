@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --section-overlay: rgba(0,0,0,0.7);
+    --background-overlay: rgba(0,0,0,0.2)
+}
+@media only screen and (max-width: 900px) and (min-width: 390px) {
+/* *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+.App {
+    background-position: center;
+    background-size:cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    width:100%;
+}
+
+.container {
+    background-color:rgb(0 0 0 / 53%);
+    border-radius: 25px;
+    display:flex;
+    flex-direction: column;
+    height:40%;
+    margin: auto;
+    width: 95% !important;
+}
+.weather {
+    position: absolute;
+    top: 10%;
+}
+.section {
+    border-radius:0.4rem;
+    display: flex;
+    padding:1rem;
+    width:100%;
+}
+.section_date {
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+    left: 68%;
+    position: absolute;
+    top: 6%;
+}
+
+.section__city {
+    color:white;
+    display:flex;
+    font-family: monospace;
+    font-size: 31px;
+    margin-left: 27%;
+    margin-top: 4%;
+}
+.section__temperature {
+    color: white;
+    display: flex;
+    font-family:monospace ;
+    font-size: 50px;
+    margin-left: 5%;
+}
+.section_data {
+    display: -webkit-box;
+}
+.icon {
+    margin-left: 12%;
+    margin-top: -15%;
+}
+.weatherData {
+    color: white;
+    font-family:monospace ;
+    text-align:left;
+}
+
+.Line {
+    height:200px
+}
+
+
+.chartjs-render-monitor {
+    border-radius: 7%;
+    height: 225px !important;
+    width: 350px !important;
+}
+
+.charts {
+    display:flex;
+    flex-wrap:wrap;
+}
+.item {
+    column-gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+}
+.button {
+    appearance: none;
+    background-color: #fffbeb5e;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family:monospace ;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    letter-spacing: 0;
+    line-height: 1em;
+    margin-bottom: 8%;
+    margin-left: 10%;
+    opacity: 1;
+    outline: 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-rendering: geometricprecision;
+    top: 4%;
+    touch-action: manipulation;
+    user-select: none;
+    vertical-align: baseline;
+    -webkit-user-select: none;
+    white-space: nowrap;
+    width: 107px;
+}
+
+.button:before {
+    backface-visibility: hidden;
+    background-color: #ed7e46a6;
+    border-radius: 10px;
+    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.button:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button:after {
+}
+.active {
+    background-color: #ed7e46a6;
+    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+  }
+
+.button span {
+  position: relative;
+  z-index: 1;
+}
+
+}
