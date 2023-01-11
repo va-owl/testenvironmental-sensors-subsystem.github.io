@@ -4,7 +4,6 @@ import Kato from "./images/Kato.jpg";
 import {Charts} from './components/Charts'
 import { RealtimeData } from './components/DataRealtime';
 
-
 class App extends Component {
 
 render() {
