@@ -8,6 +8,7 @@ function PressChart () {
 
     })
     useEffect(()=>{
+
         dbRefHist.limitToLast(6).on("value", snapshot => {
             var history = snapshot.val();
             var date6=Object.values(history)[5].date
@@ -110,12 +111,26 @@ function PressChart () {
                    Max7:pressMax7
                }))
         })
+
+        return () => {
+          setState(s => ({
+            ...s,
+           
+       }))
+        }
         
 },[]);
 
+const myFunction = () => {
+  setState({
+      name: 'Jhon',
+      surname: 'Doe',
+  })
+}
+
 return (
-      <div>
-        <Line redraw={true}
+      <div >
+        <Line  id='Press' redraw={true}
           data={{labels: [state.d1, state.d2, state.d3, state.d4, state.d5, state.d6, state.d7],
             datasets: [
                 {

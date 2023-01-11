@@ -11,6 +11,18 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+var pressChart= document.getElementById('Press')
+var tempChart=document.getElementById('Temp')
+var tempbutton= document.getElementById('tempButton')
+var pressbutton= document.getElementById('pressButton')
+
+if (tempChart !== 'null') {
+ //tempbutton.classList.add('fuck')
+}
+
+// tempbutton.addEventListener('click', ()=>{ 
+  pressbutton.classList.add('active')
+//})
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

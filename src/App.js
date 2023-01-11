@@ -20,21 +20,24 @@ import { RealtimeData } from './components/DataRealtime';
 
 ///BLABLA2
 class App extends Component {
-  constructor(props) {
-    super(props);  
-    this.state = {
-        hum: null,
-        temp: null,
-        clouds:null,
-        pressure: null,
-        icon:null,
-        // isToggleOn: true
-        tempRound:null,
-        today:null
+
+
+
+  // constructor(props) {
+  //   super(props);  
+  //   this.state = {
+  //       hum: null,
+  //       temp: null,
+  //       clouds:null,
+  //       pressure: null,
+  //       icon:null,
+  //       // isToggleOn: true
+  //       tempRound:null,
+  //       today:null
         
 
-      };
-  }
+  //     };
+  // }
 //    handleClick(){
 //     this.setState(prevState => ({
 //       isToggleOn: !prevState.isToggleOn

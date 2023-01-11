@@ -122,12 +122,18 @@ function TempChart () {
                    Max7:tempMax7
                }))
         })
+        return () => {
+          setState(s => ({
+            ...s,
+           
+       }))
+        }
         
 },[]);
 
 return (
       <div>
-        <Line redraw={true}
+        <Line id='Temp' redraw={true}
           data={{labels: [state.d1, state.d2, state.d3, state.d4, state.d5, state.d6, state.d7],
             datasets: [
                 {
